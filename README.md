@@ -21,6 +21,10 @@ Or install it yourself as:
 
 ## Usage
 
+```
+require "github-app-auth"
+```
+
 Include the module in your class
 ```
 include GitHub::App::Auth
