@@ -1,6 +1,6 @@
-require "github/app/auth/app"
-require "github/app/auth/app_installation"
-require "github/app/auth/version"
+require "github-app-auth/app"
+require "github-app-auth/app_installation"
+require "github-app-auth/version"
 
 module GitHub
   module App

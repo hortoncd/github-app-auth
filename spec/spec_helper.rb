@@ -1,5 +1,4 @@
 require "bundler/setup"
-#require_relative "../lib/github/app/auth"
 
 ENV["GITHUB_APP_ID"] = "654321"
 ENV["GITHUB_APP_PRIVATE_KEY"] = "BEGIN RSA PRIVATE KEY\nfakefakefake"
@@ -24,4 +23,4 @@ end
 
 SimpleCov.start "no_vendor_coverage"
 
-require "github/app/auth"
+require "github-app-auth"
