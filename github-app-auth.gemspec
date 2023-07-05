@@ -1,4 +1,4 @@
-require_relative 'lib/github/app/auth/version'
+require_relative 'lib/github-app-auth/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "github-app-auth"
