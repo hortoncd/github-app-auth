@@ -99,12 +99,12 @@ client = Octokit::Client.new({ bearer_token: token, ... })
 
 Auth as an application installation for a user and return an Octokit::Client.
 ```
-client = user_installation_client("myorg")
+client = user_installation_client("myuser")
 ```
 
 Alternatively you can retrieve the token, and then set up your own GitHub client (Octokit or whatever you prefer) as needed.
 ```
-token = user_installation_token("myorg")
+token = user_installation_token("myuser")
 client = Octokit::Client.new({ bearer_token: token, ... })
 ```
 
