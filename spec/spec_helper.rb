@@ -1,7 +1,7 @@
 require "bundler/setup"
 
-ENV["GITHUB_APP_ID"] = "654321"
-ENV["GITHUB_APP_PRIVATE_KEY"] = "BEGIN RSA PRIVATE KEY\nfakefakefake"
+#ENV["GITHUB_APP_ID"] = "654321"
+#ENV["GITHUB_APP_PRIVATE_KEY"] = "BEGIN RSA PRIVATE KEY\nfakefakefake"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

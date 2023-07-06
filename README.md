@@ -67,14 +67,44 @@ See [the GitHub documentation](https://docs.github.com/en/apps/creating-github-a
 
 The examples are using the gem as an includable module, but can also be used with the available AuthClass class..
 
-Auth as an application installation for a repo and return an Octokit::Client.
+There are several methods of authenticating as an application installation.
+
+#### Organization Installation
+
+Auth as an application installation for an organization and return an Octokit::Client.
 ```
-client = app_installation_client("myaccount/myrepo")
+client = organization_installation_client("myorg")
 ```
 
 Alternatively you can retrieve the token, and then set up your own GitHub client (Octokit or whatever you prefer) as needed.
 ```
-token = app_instalation_token("myaccount/myrepo")
+token = organization_installation_token("myorg")
+client = Octokit::Client.new({ bearer_token: token, ... })
+```
+
+#### Repository Installation
+
+Auth as an application installation for a repository and return an Octokit::Client.
+```
+client = repository_installation_client("myaccount/myrepo")
+```
+
+Alternatively you can retrieve the token, and then set up your own GitHub client (Octokit or whatever you prefer) as needed.
+```
+token = repository_installation_token("myaccount/myrepo")
+client = Octokit::Client.new({ bearer_token: token, ... })
+```
+
+#### User Installation
+
+Auth as an application installation for a user and return an Octokit::Client.
+```
+client = user_installation_client("myorg")
+```
+
+Alternatively you can retrieve the token, and then set up your own GitHub client (Octokit or whatever you prefer) as needed.
+```
+token = user_installation_token("myorg")
 client = Octokit::Client.new({ bearer_token: token, ... })
 ```
 
