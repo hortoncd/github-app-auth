@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    github-app-auth (0.2.0)
+    github-app-auth (0.3.0)
       jwt (~> 2.7)
       octokit (~> 6.1)
       openssl (~> 3.1)

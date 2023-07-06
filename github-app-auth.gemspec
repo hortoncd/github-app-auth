@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = "#{spec.homepage}"
   spec.metadata["changelog_uri"] = "#{spec.homepage}"
 
-  spec.files = Dir.glob("lib/**/*") + %w[CODE_OF_CONDUCT.md LICENSE.txt README.md]
+  spec.files = Dir.glob("lib/**/*") + %w[CHANGELOG.md CODE_OF_CONDUCT.md LICENSE.txt README.md]
   spec.require_paths = ["lib"]
   spec.add_dependency "jwt", "~> 2.7"
   spec.add_dependency "octokit", "~> 6.1"
