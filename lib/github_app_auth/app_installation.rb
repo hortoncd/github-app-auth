@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 module GitHub
   module App
+    # GitHub App Installation Authentication
     module Auth
       # legacy support because original only supported repo
       def app_installation_client(repo, options = {})
@@ -38,19 +41,8 @@ module GitHub
 
       # Supported types are :organization, :repository, :user
       def installation_token(type, name, options = {})
-        application_client = app_client(options)
-        installation = begin
-          case type
-          when :organization
-            application_client.find_organization_installation(name)
-          when :repository
-            application_client.find_repository_installation(name)
-          when :user
-            application_client.find_user_installation(name)
-          else
-            raise ArgumentError, "Unsupported installation type: #{type}"
-          end
-        end
+        application_client(options)
+        installation = installation_by_type(type, name)
 
         if installation.nil? || installation[:id].nil?
           raise GitHub::App::Auth::InstallationError, "Could not find installation for #{type}: #{name}"
@@ -60,7 +52,25 @@ module GitHub
         if resp.nil? || resp[:token].nil?
           raise GitHub::App::Auth::TokenError, "Could generate installation token for #{type}: #{name}"
         end
+
         resp[:token]
+      end
+
+      def installation_by_type(type, name)
+        case type
+        when :organization
+          application_client.find_organization_installation(name)
+        when :repository
+          application_client.find_repository_installation(name)
+        when :user
+          application_client.find_user_installation(name)
+        else
+          raise ArgumentError, "Unsupported installation type: #{type}"
+        end
+      end
+
+      def application_client(options = {})
+        @application_client ||= app_client(options)
       end
     end
   end

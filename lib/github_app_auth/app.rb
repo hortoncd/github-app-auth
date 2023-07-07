@@ -1,12 +1,15 @@
+# frozen_string_literal: true
+
 require "jwt"
 require "openssl"
 require_relative "client"
 
 module GitHub
   module App
+    # GitHub App Authentication
     module Auth
       def app_client(options = {})
-        client(:bearer_token => app_token(options))
+        client(bearer_token: app_token(options))
       end
 
       # options: the following can be passed via the options hash.  if missing
@@ -32,19 +35,11 @@ module GitHub
       end
 
       def app_id(options = {})
-        if options[:github_app_id]
-          options[:github_app_id]
-        else
-          ENV["GITHUB_APP_ID"]
-        end
+        options[:github_app_id] || ENV["GITHUB_APP_ID"]
       end
 
       def app_private_key(options = {})
-        if options[:github_app_private_key]
-          options[:github_app_private_key]
-        else
-          ENV["GITHUB_APP_PRIVATE_KEY"]
-        end
+        options[:github_app_private_key] || ENV["GITHUB_APP_PRIVATE_KEY"]
       end
     end
   end
