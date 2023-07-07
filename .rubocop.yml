@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - 'pkg/**/*'
+    - 'script/**/*'
+    - 'spec/**/*'
+    - 'vendor/**/*'
+  TargetRubyVersion: 3.0
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
