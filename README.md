@@ -22,7 +22,7 @@ Or install it yourself as:
 ## Usage
 
 ```
-require "github-app-auth"
+require "github_app_auth"
 ```
 
 Include the module in your class
