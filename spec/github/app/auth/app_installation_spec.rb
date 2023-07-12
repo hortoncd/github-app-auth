@@ -11,53 +11,6 @@ RSpec.describe GitHub::App::Auth do
   let(:token) { "test-token" }
   let(:user) { "test-user" }
 
-  describe ".app_installation_client" do
-    it "returns an Octokit::Client authorized to an app installation" do
-      expect(subject).to receive(:app_installation_token)
-                     .with(repo, {})
-                     .and_return("test-token")
-      expect(subject.app_installation_client(repo)).to be_kind_of(Octokit::Client)
-    end
-
-    it "returns an Octokit::Client authorized to an app installation" do
-      expect(subject).to receive(:app_installation_token)
-                     .with(repo, {})
-                     .and_return("test-token")
-      expected_output = "DEPRECATED: app_installation_client will be removed in v0.4.0, use repository_installation_client instead\n"
-      expect { subject.app_installation_client(repo) }.to output(expected_output).to_stdout
-    end
-  end
-
-  describe ".app_installation_token" do
-    it "returns a JWT token for for an app" do
-      expect(subject).to receive(:app_client)
-                     .and_return(github_client)
-      expect(github_client).to receive(:find_repository_installation)
-                           .with(repo)
-                           .and_return(id: installation_id)
-      expect(github_client).to receive(:create_app_installation_access_token)
-                           .with(installation_id)
-                           .and_return(token: token)
-      expect(subject.app_installation_token(repo)).to eq(token)
-    end
-
-    it "outputs a deprecation notice" do
-      expect(subject).to receive(:app_client)
-                     .and_return(github_client)
-      expect(github_client).to receive(:find_repository_installation)
-                           .with(repo)
-                           .and_return(id: installation_id)
-      expect(github_client).to receive(:create_app_installation_access_token)
-                           .with(installation_id)
-                           .and_return(token: token)
-      expected_output = [
-        "DEPRECATED: app_installation_client will be removed in v0.4.0, use repository_installation_client instead",
-        "DEPRECATED: app_installation_token will be removed in v0.4.0, use repository_installation_token instead\n"
-      ].join("\n")
-      expect { subject.app_installation_client(repo) }.to output(expected_output).to_stdout
-    end
-  end
-
   describe ".organization_installation_client" do
     it "returns an Octokit::Client authorized to an organization installation" do
       expect(subject).to receive(:organization_installation_token)

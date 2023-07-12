@@ -4,17 +4,6 @@ module GitHub
   module App
     # GitHub App Installation Authentication
     module Auth
-      # legacy support because original only supported repo
-      def app_installation_client(repo, options = {})
-        puts "DEPRECATED: app_installation_client will be removed in v0.4.0, use repository_installation_client instead"
-        client(bearer_token: app_installation_token(repo, options))
-      end
-
-      def app_installation_token(repo, options = {})
-        puts "DEPRECATED: app_installation_token will be removed in v0.4.0, use repository_installation_token instead"
-        installation_token(:repository, repo, options)
-      end
-
       def organization_installation_client(org, options = {})
         client(bearer_token: organization_installation_token(org, options))
       end
