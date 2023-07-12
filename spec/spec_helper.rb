@@ -23,4 +23,4 @@ end
 
 SimpleCov.start "no_vendor_coverage"
 
-require "github-app-auth"
+require "github_app_auth"
