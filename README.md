@@ -1,5 +1,8 @@
 # GitHub::App::Auth
 
+![Tests](https://github.com/hortoncd/github-app-auth/actions/workflows/tests.yml/badge.svg)
+[![Gem Version](https://badge.fury.io/rb/github-app-auth.svg)](https://badge.fury.io/rb/github-app-auth)
+
 A gem to make (at least) some forms of GitHub App authentication easy.  It is built as an includable module, with the option of a class to
 instantiate if preferred.
 
