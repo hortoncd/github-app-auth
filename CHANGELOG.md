@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+  - remove deprecated app_* methods that were only repository installations
+  - change require to 'github_app_auth' when adding linter
+
 ## 0.3.0
   - deprecates app_* methods that were only repository installations
   - adds methods to do organization, repository, and user installations
