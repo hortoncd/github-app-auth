@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
   spec.files = Dir.glob("lib/**/*") + %w[CHANGELOG.md CODE_OF_CONDUCT.md LICENSE.txt README.md]
   spec.require_paths = ["lib"]
   spec.add_dependency "jwt", "~> 2.7"
-  spec.add_dependency "octokit", "~> 6.1"
+  spec.add_dependency "octokit", ">= 6.1"
   spec.add_dependency "openssl", "~> 3.1"
 end
