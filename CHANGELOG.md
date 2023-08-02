@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.1
+  - loosen restriction on Octokit version
+
 ## 0.4.0
   - remove deprecated app_* methods that were only repository installations
   - change require to 'github_app_auth' when adding linter
