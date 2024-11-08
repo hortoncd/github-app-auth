@@ -39,7 +39,7 @@ module GitHub
 
         resp = application_client.create_app_installation_access_token(installation[:id])
         if resp.nil? || resp[:token].nil?
-          raise GitHub::App::Auth::TokenError, "Could generate installation token for #{type}: #{name}"
+          raise GitHub::App::Auth::TokenError, "Could not generate installation token for #{type}: #{name}"
         end
 
         resp[:token]
