@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.2
+  - fixed inaccurate error message
+
 ## 0.4.1
   - loosen restriction on Octokit version
 
