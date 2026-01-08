@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.4.3
+  - adjust session start and end 10 seconds back from `now`
+
 ## 0.4.2
   - fixed inaccurate error message
 
